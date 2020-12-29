@@ -1,7 +1,13 @@
-const container = document.querySelector('.container');
-container.style.background = `rgb(${random()}, ${random()}, ${random()})`
+const tile = document.querySelectorAll('.col');
+const colorHeading = document.querySelector('.rand-color');
 
-function random() {
-  let rng = Math.floor(Math.random() * 255) + 1;
-  return rng;
+function randomColorBuilder() {
+  let r = Math.floor(Math.random() * 255) + 1;
+  let g = Math.floor(Math.random() * 255) + 1;
+  let b = Math.floor(Math.random() * 255) + 1;
+  return `rbg(${r}, ${g}, ${b})`;
 }
+let color = randomColorBuilder();
+console.log(color);
+colorHeading.textContent = color;
+tile[3].style.background = color;

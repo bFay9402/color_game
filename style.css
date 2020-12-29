@@ -11,6 +11,37 @@ body {
 }
 
 .container {
-  height: 300px;
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container h1 {
+  margin: 2% 0;
+}
+
+.container h4 {
+  margin-bottom: 5%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 30%;
+}
+
+.col {
+  margin-bottom: 5%;
+  height: 150px;
+  width: 150px;
+  background: blue;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+}
+
+.col:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
