@@ -1,13 +1,23 @@
 const tile = document.querySelectorAll('.col');
 const colorHeading = document.querySelector('.rand-color');
 
+setupTiles();
+
 function randomColorBuilder() {
   let r = Math.floor(Math.random() * 255) + 1;
   let g = Math.floor(Math.random() * 255) + 1;
   let b = Math.floor(Math.random() * 255) + 1;
-  return `rbg(${r}, ${g}, ${b})`;
+  return `rgb(${r}, ${g}, ${b})`;
 }
-let color = randomColorBuilder();
-console.log(color);
-colorHeading.textContent = color;
-tile[3].style.background = color;
+
+function setupTiles() {
+  let colors = [];
+  let randNum = Math.floor(Math.random() * 6) + 1;
+  let pickedColor;
+  for(let i = 0; i < tile.length; i++) {
+    tile[i].style.background = randomColorBuilder();
+    colors.push(tile[i].style.background);
+  }
+  pickedColor = tile[randNum].style.background;
+  colorHeading.textContent = tile[randNum].style.background;
+}
